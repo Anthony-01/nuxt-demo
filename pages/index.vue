@@ -18,6 +18,7 @@ export default {
     onJumpTo() {
 
     }
-  }
+  },
+  layout: "blog"
 }
 </script>
