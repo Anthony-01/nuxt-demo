@@ -6,6 +6,7 @@
     </a-button>
     <div class="result" style="text-align: center">
       <span>结果:</span>
+      <button @click="onTest"> 测试</button>
       <br>
       {{errorCode}}
     </div>
@@ -23,6 +24,10 @@ export default {
   methods: {
     onJumpTo() {
 
+    },
+    onTest() {
+
+      console.log(this.$api)
     }
   },
   layout: "blog",
@@ -35,11 +40,13 @@ export default {
     //   .catch(e => {
     //     error({ statusCode: 404, message: 'Post not found' })
     //   })
-    console.log(api);
-    return api.questTest().then(res => {
-      // debugger;
-      return { errorCode: res.errorCode }
-    })
+    console.log("环境：", process.server);
+    console.log("环境：", process);
+    console.log("参数：", params);
+    // return api.questTest().then(res => {
+    //   // debugger;
+    //   return { errorCode: res.errorCode }
+    // })
   }
 }
 </script>

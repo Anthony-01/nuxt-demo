@@ -12,13 +12,15 @@ const install = (Vue) => {
   if (install.installed) return;
   install.installed = true;
 
-  Object.defineProperty(Vue.prototype, "$api", {
-    get() {
-      return api
+  Object.defineProperties(Vue.prototype, {
+    $api: {
+      get() {
+        return api
+      }
     }
   })
 }
 
 export default {
-  questTest
+  install
 }
